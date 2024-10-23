@@ -25,8 +25,8 @@ class UserRegisterService extends ResponseLogic implements Service  {
         }
 
 
-
-    public function execute ( ): Array | Model  {
+    
+    public function execute ( ): Array | Model {
 
         $userCreateRepository = new UserCreateRepository();
 
@@ -42,7 +42,7 @@ class UserRegisterService extends ResponseLogic implements Service  {
         if ($user == null)
         throw new Exception('');
 
-        return [];
+        return $user;
 
     }
 

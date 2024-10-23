@@ -15,7 +15,7 @@ class UserRegisterRequest extends FormRequest
     {
         return true;
     }
-
+    
 
 
     /**
@@ -30,6 +30,9 @@ class UserRegisterRequest extends FormRequest
             'firstName'=>['required', 'max:25', 'min:3', 'string'],
             'lastName'=> ['required', 'max:25', 'min:3', 'string'],
             'phoneNumber'=>['required', 'numeric', 'digits:10','unique:users'],
+
+            
+         
         ];
     }
 

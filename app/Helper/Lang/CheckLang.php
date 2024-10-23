@@ -1,16 +1,16 @@
 <?php
 
-use App\Const\Options\LangOptions ;
-
+use App\Const\Options\Settings;
+use App\Const\Options\LanguageOptions;
 
 
 function checkLangAndSendMessage($message){
 
+    $language = Settings::getLanguage();
 
-    if (in_array(request()->header('localization'),LangOptions::$lang)) {
-        return __($message,[],request()->header('localization'));
+    if ($language == LanguageOptions::$language ) {
+        return __($message,[] ,$language);
     }
-
     return __($message,[],"ar");
 
 }

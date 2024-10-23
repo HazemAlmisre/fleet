@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Auth\GetSubscriptionPolicyController;
+use App\Http\Controllers\Auth\UserLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\UserRegisterController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
 
-Route::post('/add',UserRegisterController::class);
+Route::post('/register',UserRegisterController::class);
+Route::post('/login',UserLoginController ::class);
+Route::get('/Policy',GetSubscriptionPolicyController::class);
+
